@@ -1,0 +1,16 @@
+/**
+*@Description: Takes an array of letters, checks each item in array to see which letter is missing
+*@Ex: ['a','b','d'] returns 'c'
+*@algo: get char code for current element, check to see if it + 1 equals next item in array
+*/
+
+function findMissingLetter(array)
+{
+  var missingLetter = " ";
+  array.forEach(function(current, index, array){
+    if(index < array.length - 1 && current.charCodeAt(0) + 1 !== array[index+1].charCodeAt(0)){
+      missingLetter = String.fromCharCode(current.charCodeAt(0)+1);
+    }
+  })
+  return missingLetter;
+}
